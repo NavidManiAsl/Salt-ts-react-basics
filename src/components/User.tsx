@@ -7,6 +7,7 @@ interface IProps {
 }
 
 const User:FC<IProps> = ({name, age ,address})=> {
+  
   return (
     <div>
       <p>{name}</p>
