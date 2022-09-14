@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import {ChangeEventHandler, FC, ReactFragment, useState}from 'react';
 import './App.css';
+import User from './components/User';
 
-function App() {
+const App:FC = () => {
+  
+  const [name, setName] = useState('')
+  const [age, setAge] = useState(0)
+  const [address, setAddress] = useState('')
+  const nameChanger =(e:React.ChangeEvent<HTMLInputElement>)=>{
+      setName(e.target.value)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <User  name={name} age={age} address={address} />
+      <input placeholder='Name...' value={name} onChange={nameChanger} />
     </div>
   );
 }
