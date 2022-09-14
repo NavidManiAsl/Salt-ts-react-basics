@@ -1,4 +1,4 @@
-import {ChangeEventHandler, FC, ReactFragment, useState}from 'react';
+import {ChangeEvent, FC, useState}from 'react';
 import './App.css';
 import User from './components/User';
 
@@ -7,7 +7,7 @@ const App:FC = () => {
   const [name, setName] = useState('')
   const [age, setAge] = useState(0)
   const [address, setAddress] = useState('')
-  const nameChanger =(e:React.ChangeEvent<HTMLInputElement>)=>{
+  const nameChanger =(e:ChangeEvent<HTMLInputElement>)=>{
       setName(e.target.value)
   }
   return (
